@@ -30,6 +30,8 @@ function altitude_enqueue_scripts_styles() {
 
 }
 
+//* Add Woocommerce support
+add_theme_support( 'genesis-connect-woocommerce' );
 //* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
