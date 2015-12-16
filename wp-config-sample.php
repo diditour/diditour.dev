@@ -1,89 +1,96 @@
 <?php
 /**
- * La configuration de base de votre installation WordPress.
+ * WordPress基础配置文件。
  *
- * Ce fichier contient les réglages de configuration suivants : réglages MySQL,
- * préfixe de table, clefs secrètes, langue utilisée, et ABSPATH.
- * Vous pouvez en savoir plus à leur sujet en allant sur 
- * {@link http://codex.wordpress.org/fr:Modifier_wp-config.php Modifier
- * wp-config.php}. C'est votre hébergeur qui doit vous donner vos
- * codes MySQL.
+ * 这个文件被安装程序用于自动生成wp-config.php配置文件，
+ * 您可以不使用网站，您需要手动复制这个文件，
+ * 并重命名为“wp-config.php”，然后填入相关信息。
  *
- * Ce fichier est utilisé par le script de création de wp-config.php pendant
- * le processus d'installation. Vous n'avez pas à utiliser le site web, vous
- * pouvez simplement renommer ce fichier en "wp-config.php" et remplir les
- * valeurs.
+ * 本文件包含以下配置选项：
+ *
+ * * MySQL设置
+ * * 密钥
+ * * 数据库表名前缀
+ * * ABSPATH
+ *
+ * @link https://codex.wordpress.org/zh-cn:%E7%BC%96%E8%BE%91_wp-config.php
  *
  * @package WordPress
  */
 
-// ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
-/** Nom de la base de données de WordPress. */
-define('DB_NAME', 'votre_nom_de_bdd');
+// ** MySQL 设置 - 具体信息来自您正在使用的主机 ** //
+/** WordPress数据库的名称 */
+define('DB_NAME', 'database_name_here');
 
-/** Utilisateur de la base de données MySQL. */
-define('DB_USER', 'votre_utilisateur_de_bdd');
+/** MySQL数据库用户名 */
+define('DB_USER', 'username_here');
 
-/** Mot de passe de la base de données MySQL. */
-define('DB_PASSWORD', 'votre_mdp_de_bdd');
+/** MySQL数据库密码 */
+define('DB_PASSWORD', 'password_here');
 
-/** Adresse de l'hébergement MySQL. */
+/** MySQL主机 */
 define('DB_HOST', 'localhost');
 
-/** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
+/** 创建数据表时默认的文字编码 */
 define('DB_CHARSET', 'utf8');
 
-/** Type de collation de la base de données. 
-  * N'y touchez que si vous savez ce que vous faites. 
-  */
+/** 数据库整理类型。如不确定请勿更改 */
 define('DB_COLLATE', '');
 
 /**#@+
- * Clefs uniques d'authentification et salage.
+ * 身份认证密钥与盐。
  *
- * Remplacez les valeurs par défaut par des phrases uniques !
- * Vous pouvez générer des phrases aléatoires en utilisant 
- * {@link https://api.wordpress.org/secret-key/1.1/salt/ le service de clefs secrètes de WordPress.org}.
- * Vous pouvez modifier ces phrases à n'importe quel moment, afin d'invalider tous les cookies existants.
- * Cela forcera également tous les utilisateurs à se reconnecter.
+ * 修改为任意独一无二的字串！
+ * 或者直接访问{@link https://api.wordpress.org/secret-key/1.1/salt/
+ * WordPress.org密钥生成服务}
+ * 任何修改都会导致所有cookies失效，所有用户将必须重新登录。
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here'); 
-define('SECURE_AUTH_KEY',  'put your unique phrase here'); 
-define('LOGGED_IN_KEY',    'put your unique phrase here'); 
-define('NONCE_KEY',        'put your unique phrase here'); 
-define('AUTH_SALT',        'put your unique phrase here'); 
-define('SECURE_AUTH_SALT', 'put your unique phrase here'); 
-define('LOGGED_IN_SALT',   'put your unique phrase here'); 
-define('NONCE_SALT',       'put your unique phrase here'); 
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
+
 /**#@-*/
 
 /**
- * Préfixe de base de données pour les tables de WordPress.
+ * WordPress数据表前缀。
  *
- * Vous pouvez installer plusieurs WordPress sur une seule base de données
- * si vous leur donnez chacune un préfixe unique. 
- * N'utilisez que des chiffres, des lettres non-accentuées, et des caractères soulignés!
+ * 如果您有在同一数据库内安装多个WordPress的需求，请为每个WordPress设置
+ * 不同的数据表前缀。前缀名只能为数字、字母加下划线。
  */
 $table_prefix  = 'wp_';
 
-/** 
- * Pour les développeurs : le mode deboguage de WordPress.
- * 
- * En passant la valeur suivante à "true", vous activez l'affichage des
- * notifications d'erreurs pendant votre essais.
- * Il est fortemment recommandé que les développeurs d'extensions et
- * de thèmes se servent de WP_DEBUG dans leur environnement de 
- * développement.
- */ 
-define('WP_DEBUG', false); 
+/**
+ * 开发者专用：WordPress调试模式。
+ *
+ * 将这个值改为true，WordPress将显示所有用于开发的提示。
+ * 强烈建议插件开发者在开发环境中启用WP_DEBUG。
+ *
+ * 要获取其他能用于调试的信息，请访问Codex。
+ *
+ * @link https://codex.wordpress.org/Debugging_in_WordPress
+ */
+define('WP_DEBUG', false);
 
-/* C'est tout, ne touchez pas à ce qui suit ! Bon blogging ! */
+/**
+ * zh_CN本地化设置：启用ICP备案号显示
+ *
+ * 可在设置→常规中修改。
+ * 如需禁用，请移除或注释掉本行。
+ */
+define('WP_ZH_CN_ICP_NUM', true);
 
-/** Chemin absolu vers le dossier de WordPress. */
+/* 好了！请不要再继续编辑。请保存本文件。使用愉快！ */
+
+/** WordPress目录的绝对路径。 */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Réglage des variables de WordPress et de ses fichiers inclus. */
+/** 设置WordPress变量和包含文件。 */
 require_once(ABSPATH . 'wp-settings.php');
