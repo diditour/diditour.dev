@@ -1,5 +1,14 @@
 *** WooCommerce Bookings Changelog ***
 
+2015.12.16 - version 1.8.6
+* Fix - Ignore local time zone when calculating dates from the date picker.
+
+2015.12.14 - version 1.8.5
+* Fix - WooCommerce 2.5+ Compatibility.
+* Fix - UI improvements for Person & Resource tabs.
+* Fix - Label display bug on check-out/order page.
+* Fix - Multipler calculation for hours.
+
 2015.11.25 - version 1.8.4
 * Fix - An additional fix for accurate buffer calculations.
 * Tweak - New filter to change custom bookings labels.

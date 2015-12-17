@@ -916,7 +916,7 @@ class WC_Product_Booking extends WC_Product {
 									$multiplier = 60;
 								} else {
 									$total_time = $from_interval + ( $buffer_period * $i );
-									$multiplier = 360;
+									$multiplier = 3600;
 								}
 
 								$start_time    = strtotime( "+{$total_time} minutes", $time_block_start );

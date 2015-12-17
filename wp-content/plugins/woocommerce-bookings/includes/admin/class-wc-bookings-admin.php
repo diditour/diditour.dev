@@ -278,7 +278,7 @@ class WC_Bookings_Admin {
 		$loop    = intval( $_POST['loop'] );
 
 		$person_type = array(
-			'post_title'   => sprintf( __( 'Person Type #%d', 'woocommerce-bookings' ), ( $loop + 1 ) ),
+			'post_title'   => '',
 			'post_content' => '',
 			'post_status'  => 'publish',
 			'post_author'  => get_current_user_id(),

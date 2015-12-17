@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<tr>
 				<td>
 					<label><?php _e( 'Person Type Name', 'woocommerce-bookings' ); ?>:</label>
-					<input type="text" class="person_name" name="person_name[<?php echo $loop; ?>]" value="<?php echo esc_attr( $person_type->post_title ); ?>" placeholder="<?php _e( 'Person Type #', 'woocommerce-bookings' ) . $loop; ?>" />
+					<input type="text" class="person_name" name="person_name[<?php echo $loop; ?>]" value="<?php echo esc_attr( $person_type->post_title ); ?>" placeholder="<?php _e( 'Name', 'woocommerce-bookings' ) . $loop; ?>" />
 				</td>
 				<td>
 					<label><?php _e( 'Base Cost', 'woocommerce-bookings' ); ?>:</label>

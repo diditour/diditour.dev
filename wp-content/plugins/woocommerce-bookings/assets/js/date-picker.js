@@ -42,7 +42,8 @@ jQuery( function( $ ) {
 				if ( e_year && e_month >= 0 && e_day && s_year && s_month >= 0 && s_day ) {
 					var s_date = new Date( s_year, s_month - 1, s_day );
 					var e_date = new Date( e_year, e_month - 1, e_day );
-
+					s_date.setUTCHours(0);
+					e_date.setUTCHours(0);
 					days = Math.floor( ( e_date.getTime() - s_date.getTime() ) / ( 1000*60*60*24 ) ) + 1;
 				}
 

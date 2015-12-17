@@ -33,7 +33,7 @@ function get_wc_booking_data_label( $key, $product ) {
 			'persons'  => __( 'Person(s)', 'woocommerce-bookings' )
 	) );
 
-	if ( ! in_array( $key, $labels ) ) {
+	if ( ! array_key_exists( $key, $labels ) ) {
 		return $key;
 	}
 
